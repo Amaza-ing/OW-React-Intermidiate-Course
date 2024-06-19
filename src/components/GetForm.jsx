@@ -1,3 +1,4 @@
+import "./GetForm.css";
 import { useState } from "react";
 
 function GetForm(props) {
@@ -18,28 +19,34 @@ function GetForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <fieldset>
-        <label htmlFor="from-pokemon">From:</label>
+    <form onSubmit={handleSubmit} className="get-form">
+      <fieldset className="form-field">
+        <label htmlFor="from-pokemon" className="label">
+          From:
+        </label>
         <input
           type="number"
+          className="input"
           value={from}
           min={1}
           id="from-pokemon"
           onChange={handleFromInput}
         />
       </fieldset>
-      <fieldset>
-        <label htmlFor="to-pokemon">To:</label>
+      <fieldset className="form-field">
+        <label htmlFor="to-pokemon" className="label">
+          To:
+        </label>
         <input
           type="number"
+          className="input"
           value={to}
           min={1}
           id="to-pokemon"
           onChange={handleToInput}
         />
       </fieldset>
-      <button>Get Pokemon!</button>
+      <button className="btn">Get Pokemon!</button>
     </form>
   );
 }
