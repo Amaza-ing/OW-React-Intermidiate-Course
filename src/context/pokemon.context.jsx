@@ -1,10 +1,12 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 const PokemonContext = createContext();
 
 function PokemonProviderWrapper(props) {
+  const [pokemons, setPokemons] = useState([]);
+
   return (
-    <PokemonContext.Provider value={{}}>
+    <PokemonContext.Provider value={{ pokemons, setPokemons }}>
       {props.children}
     </PokemonContext.Provider>
   );
