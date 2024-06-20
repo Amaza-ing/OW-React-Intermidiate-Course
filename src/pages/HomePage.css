@@ -16,8 +16,10 @@
 
   .link {
     background-color: orange;
+    color: black;
     padding: 10px 20px;
     cursor: pointer;
+    text-decoration: none;
   }
   .link:hover {
     background-color: orangered;
