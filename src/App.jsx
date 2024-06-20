@@ -3,10 +3,32 @@ import "./App.css";
 import PokemonDetails from "./components/PokemonDetails";
 import PokemonDetails2 from "./components/PokemonDetails2";
 import PokemonList from "./components/PokemonList";
+import DetailsWrapper from "./hoc/DetailsWrapper";
 
 function App() {
   const [selectedPokemon, setSelectedPokemon] = useState();
   const [selectedPokemon2, setSelectedPokemon2] = useState();
+
+  const getDetails1 = (likes, increaseLikes) => {
+    return (
+      <PokemonDetails
+        pokemon={selectedPokemon}
+        likes={likes}
+        increaseLikes={increaseLikes}
+      ></PokemonDetails>
+    );
+  };
+
+  const getDetails2 = (likes, increaseLikes) => {
+    return (
+      <PokemonDetails2
+        pokemon={selectedPokemon2}
+        likes={likes}
+        increaseLikes={increaseLikes}
+      ></PokemonDetails2>
+    );
+  };
+
   return (
     <main className="main">
       <div>
@@ -15,10 +37,10 @@ function App() {
         )}
         <div className="selected-pokemons">
           {selectedPokemon && (
-            <PokemonDetails pokemon={selectedPokemon}></PokemonDetails>
+            <DetailsWrapper render={getDetails1}></DetailsWrapper>
           )}
           {selectedPokemon2 && (
-            <PokemonDetails2 pokemon={selectedPokemon2}></PokemonDetails2>
+            <DetailsWrapper render={getDetails2}></DetailsWrapper>
           )}
         </div>
       </div>

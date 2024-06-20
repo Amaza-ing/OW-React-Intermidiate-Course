@@ -1,4 +1,3 @@
-import DetailsWrapper from "../hoc/DetailsWrapper";
 import "./PokemonDetails.css";
 
 function PokemonDetails(props) {
@@ -25,4 +24,4 @@ function PokemonDetails(props) {
   );
 }
 
-export default DetailsWrapper(PokemonDetails);
+export default PokemonDetails;
