@@ -1,13 +1,8 @@
-import { useState } from "react";
+import DetailsWrapper from "../hoc/DetailsWrapper";
 import "./PokemonDetails.css";
 
 function PokemonDetails(props) {
-  const { pokemon } = props;
-  const [likes, setLikes] = useState(0);
-
-  const increaseLikes = () => {
-    setLikes(likes + 1);
-  };
+  const { pokemon, likes, increaseLikes } = props;
 
   return (
     <section className="selected-pokemon">
@@ -30,4 +25,4 @@ function PokemonDetails(props) {
   );
 }
 
-export default PokemonDetails;
+export default DetailsWrapper(PokemonDetails);
