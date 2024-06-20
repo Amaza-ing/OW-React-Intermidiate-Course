@@ -1,7 +1,7 @@
 import DetailsWrapper from "../hoc/DetailsWrapper";
 import "./PokemonDetails.css";
 
-function PokemonDetails(props) {
+function PokemonDetails2(props) {
   const { pokemon, likes, increaseLikes } = props;
 
   return (
@@ -25,4 +25,4 @@ function PokemonDetails(props) {
   );
 }
 
-export default DetailsWrapper(PokemonDetails);
+export default DetailsWrapper(PokemonDetails2);
