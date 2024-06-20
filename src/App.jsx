@@ -1,55 +1,14 @@
-import { useState } from "react";
 import "./App.css";
-import PokemonDetails from "./components/PokemonDetails";
-import PokemonDetails2 from "./components/PokemonDetails2";
-import PokemonList from "./components/PokemonList";
-import DetailsWrapper from "./hoc/DetailsWrapper";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import PokemonsPage from "./pages/PokemonsPage";
 
 function App() {
-  const [selectedPokemon, setSelectedPokemon] = useState();
-  const [selectedPokemon2, setSelectedPokemon2] = useState();
-
-  const getDetails1 = (likes, increaseLikes) => {
-    return (
-      <PokemonDetails
-        pokemon={selectedPokemon}
-        likes={likes}
-        increaseLikes={increaseLikes}
-      ></PokemonDetails>
-    );
-  };
-
-  const getDetails2 = (likes, increaseLikes) => {
-    return (
-      <PokemonDetails2
-        pokemon={selectedPokemon2}
-        likes={likes}
-        increaseLikes={increaseLikes}
-      ></PokemonDetails2>
-    );
-  };
-
   return (
-    <main className="main">
-      <div>
-        {(selectedPokemon || selectedPokemon2) && (
-          <h2>Pokemons Seleccionados</h2>
-        )}
-        <div className="selected-pokemons">
-          {selectedPokemon && (
-            <DetailsWrapper render={getDetails1}></DetailsWrapper>
-          )}
-          {selectedPokemon2 && (
-            <DetailsWrapper render={getDetails2}></DetailsWrapper>
-          )}
-        </div>
-      </div>
-      <h2>Lista de Pokemons</h2>
-      <PokemonList
-        selectPokemon={setSelectedPokemon}
-        selectPokemon2={setSelectedPokemon2}
-      ></PokemonList>
-    </main>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/pokemons" element={<PokemonsPage />} />
+    </Routes>
   );
 }
 
