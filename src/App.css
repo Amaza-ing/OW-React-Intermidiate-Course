@@ -1,3 +1,9 @@
 .main {
   margin: 50px;
+
+  .selected-pokemons {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
 }

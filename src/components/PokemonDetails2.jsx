@@ -12,12 +12,12 @@ function PokemonDetails(props) {
   return (
     <section className="selected-pokemon">
       <div>
-        <h3>Pokemon 1</h3>
+        <h3>Pokemon 2</h3>
         <h3>
           Likes {likes} <button onClick={increaseLikes}>+</button>
         </h3>
       </div>
-      <div className="pokemon-container">
+      <div className="pokemon-container pokemon-2">
         <h2 className="text">{pokemon.name}</h2>
         <img
           src={pokemon.sprites.front_default}

@@ -1,6 +1,8 @@
 .selected-pokemon {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   .pokemon-container {
     width: 300px;
@@ -21,5 +23,9 @@
     .pokemon-img {
       width: 100%;
     }
+  }
+  .pokemon-container.pokemon-2 {
+    background-color: lightyellow;
+    color: black;
   }
 }

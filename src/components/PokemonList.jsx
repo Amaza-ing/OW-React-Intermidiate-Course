@@ -34,6 +34,7 @@ function PokemonList(props) {
         key={pokemon.id}
         pokemon={pokemon}
         selectPokemon={props.selectPokemon}
+        selectPokemon2={props.selectPokemon2}
       ></PokemonCard>
     );
   });
