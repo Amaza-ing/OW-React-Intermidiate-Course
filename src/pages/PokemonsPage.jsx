@@ -1,17 +1,18 @@
 import "./PokemonsPage.css";
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import PokemonDetails from "../components/PokemonDetails";
 import PokemonDetails2 from "../components/PokemonDetails2";
 import PokemonList from "../components/PokemonList";
 import DetailsWrapper from "../hoc/DetailsWrapper";
 import { Navigate } from "react-router-dom";
+import { UserContext } from "../context/user.context";
 
 function PokemonsPage() {
-  const [hasAccess, setAccess] = useState(false);
-  
-  if (!hasAccess) return <Navigate to={"/error"}/>
+  const { user } = useContext(UserContext);
+
+  if (!user.isLoggedIn) return <Navigate to={"/error"} />;
 
   const [selectedPokemon, setSelectedPokemon] = useState();
   const [selectedPokemon2, setSelectedPokemon2] = useState();
