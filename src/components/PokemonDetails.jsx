@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./PokemonDetails.css";
 
 function PokemonDetails(props) {
@@ -10,6 +11,7 @@ function PokemonDetails(props) {
         <h3>
           Likes {likes} <button onClick={increaseLikes}>+</button>
         </h3>
+        <Link to={`/pokemons/${pokemon.id}`}>Ver detalles</Link>
       </div>
       <div className="pokemon-container">
         <h2 className="text">{pokemon.name}</h2>
