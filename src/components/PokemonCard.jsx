@@ -4,8 +4,6 @@ import "./PokemonCard.css";
 function PokemonCard(props) {
   const { pokemon, selectPokemon, selectPokemon2 } = props;
 
-  console.log("Pokemon Card rendered");
-
   return (
     <li
       className="pokemon-card"

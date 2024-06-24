@@ -22,18 +22,20 @@ function PokemonList(props) {
     setPokemons(pkmnArr);
   };
 
-  const pokemonCards = useMemo(() => pokemons.map((pokemon) => {
-    console.log("Pokemons map");
-
-    return (
-      <PokemonCard
-        key={pokemon.id}
-        pokemon={pokemon}
-        selectPokemon={props.selectPokemon}
-        selectPokemon2={props.selectPokemon2}
-      ></PokemonCard>
-    );
-  }), [pokemons]);
+  const pokemonCards = useMemo(
+    () =>
+      pokemons.map((pokemon) => {
+        return (
+          <PokemonCard
+            key={pokemon.id}
+            pokemon={pokemon}
+            selectPokemon={props.selectPokemon}
+            selectPokemon2={props.selectPokemon2}
+          ></PokemonCard>
+        );
+      }),
+    [pokemons]
+  );
 
   return (
     <div>

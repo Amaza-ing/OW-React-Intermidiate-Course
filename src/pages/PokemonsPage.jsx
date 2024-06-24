@@ -37,8 +37,6 @@ function PokemonsPage() {
     );
   };
 
-  console.log("Pokemons page rendered");
-
   return (
     <main className="main">
       {user.name && (
