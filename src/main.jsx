@@ -9,7 +9,7 @@ import { UserProviderWrapper } from './context/user.context.jsx'
 import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <UserProviderWrapper>
         <PokemonProviderWrapper>
@@ -17,5 +17,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </PokemonProviderWrapper>    
       </UserProviderWrapper>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 )

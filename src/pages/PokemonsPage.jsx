@@ -10,7 +10,7 @@ import { Navigate } from "react-router-dom";
 import { UserContext } from "../context/user.context";
 
 function PokemonsPage() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   if (!user.isLoggedIn) return <Navigate to={"/error"} />;
 
@@ -37,8 +37,18 @@ function PokemonsPage() {
     );
   };
 
+  console.log("Pokemons page rendered");
+
   return (
     <main className="main">
+      {user.name && (
+        <section>
+          <h2>Hola {user.name}</h2>
+          <button onClick={() => setUser({ ...user, name: "María" })}>
+            Change Name
+          </button>
+        </section>
+      )}
       <div>
         {(selectedPokemon || selectedPokemon2) && (
           <h2>Pokemons Seleccionados</h2>
