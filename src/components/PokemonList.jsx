@@ -3,6 +3,7 @@ import { useContext, useEffect, useMemo } from "react";
 import { PokemonContext } from "../context/pokemon.context";
 import PokemonCard from "./PokemonCard";
 import GetForm from "./GetForm";
+import { FixedSizeList } from "react-window";
 
 function PokemonList(props) {
   const { pokemons, setPokemons, fetchPokemon } = useContext(PokemonContext);
@@ -37,10 +38,25 @@ function PokemonList(props) {
     [pokemons]
   );
 
+  const renderRow = ({ index, style }) => (
+    <div style={{ ...style, display: "flex", justifyContent: "center" }}>
+      <>{pokemonCards[index]}</>
+    </div>
+  );
+
   return (
     <div>
       <GetForm getPokemons={getPokemons}></GetForm>
-      <ul className="pokemon-list">{pokemonCards}</ul>
+      <ul className="pokemon-list">
+        <FixedSizeList
+          height={400}
+          width={"100vw"}
+          itemCount={pokemons.length}
+          itemSize={400}
+        >
+          {renderRow}
+        </FixedSizeList>
+      </ul>
     </div>
   );
 }
