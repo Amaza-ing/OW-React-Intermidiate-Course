@@ -61,10 +61,10 @@ function PokemonsPage() {
         </div>
       </div>
       <h2>Lista de Pokemons</h2>
-      {/* <PokemonList
+      <PokemonList
         selectPokemon={setSelectedPokemon}
         selectPokemon2={setSelectedPokemon2}
-      ></PokemonList> */}
+      ></PokemonList>
     </main>
   );
 }

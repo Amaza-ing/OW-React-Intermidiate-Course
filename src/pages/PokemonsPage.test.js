@@ -2,6 +2,13 @@ import { fireEvent, render } from "@testing-library/react";
 import PokemonsPage from "./PokemonsPage";
 import { UserProviderWrapper } from "../context/user.context";
 
+jest.mock("../components/PokemonList.jsx", () => {
+  return {
+    __esModule: true,
+    default: () => <></>,
+  };
+});
+
 describe(PokemonsPage, () => {
   it("Hello message should say 'Hola Adrián", () => {
     const { getByTestId } = render(
