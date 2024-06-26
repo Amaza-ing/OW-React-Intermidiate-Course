@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function HomePage() {
   return (
     <section id="home-page">
-      <h1 className="title">Bienvenidos</h1>
+      <h1 className="title" data-testid="welcome">Bienvenidos</h1>
       <img src={logo} alt="Pokemon Logo" className="logo" />
       <Link to="/pokemons" className="link">ENTRAR</Link>
     </section>
