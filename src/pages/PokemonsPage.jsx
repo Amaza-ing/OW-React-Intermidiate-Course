@@ -41,7 +41,7 @@ function PokemonsPage() {
     <main className="main">
       {user.name && (
         <section>
-          <h2>Hola {user.name}</h2>
+          <h2 data-testid="user-hello">Hola {user.name}</h2>
           <button onClick={() => setUser({ ...user, name: "María" })}>
             Change Name
           </button>
@@ -61,10 +61,10 @@ function PokemonsPage() {
         </div>
       </div>
       <h2>Lista de Pokemons</h2>
-      <PokemonList
+      {/* <PokemonList
         selectPokemon={setSelectedPokemon}
         selectPokemon2={setSelectedPokemon2}
-      ></PokemonList>
+      ></PokemonList> */}
     </main>
   );
 }
