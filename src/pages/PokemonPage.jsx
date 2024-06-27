@@ -2,9 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import "./PokemonPage.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { PokemonContext } from "../context/pokemon.context";
+import { fetchPokemon } from "../api";
 
 function PokemonPage() {
-  const { fetchPokemon } = useContext(PokemonContext);
+  // const { fetchPokemon } = useContext(PokemonContext);
 
   const { id } = useParams();
   const [pokemon, setPokemon] = useState();
