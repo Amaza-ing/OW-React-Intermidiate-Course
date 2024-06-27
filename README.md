@@ -1,3 +1,7 @@
+# Curso de React nivel Intermedio
+
+Muévete a cada rama para ver el código de ejemplo de esa lección
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
